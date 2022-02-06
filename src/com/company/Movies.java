@@ -41,6 +41,23 @@ public class Movies {
     }
 
 
+    public void display_movie(){
+        System.out.println("==========Movie List==========\n");
+        System.out.printf( "%5s|| %15s|| %20s|| %20s|| %10s||" + "", "Index", "Book Name", "Consumption(Hour)", "Consumption(Day)","Rating");
+        System.out.println();
 
+        for(int j=0;j<i;j++) {
+            int k = j+1;
+            System.out.format("%5s %15s %20f %20f %10f", k,movies[j],Hour[j],Day[j],Rating[j]);
+            System.out.println();
+        }
+    }
+    public void show_details(int q){
+        int id=q-1;
+        System.out.printf("%20s %15s %15s %18s %18s %10s", "Movie Name","Start_Date", "End_Date", "Consumption(Hour)", "Consumption(Day)","Rating");
+        System.out.println();
+        System.out.format("%20s %15s %15s %18s %18s %10s", movies[id],Start_date[id],End_date[id],Hour[id],Day[id],Rating[id]);
+        System.out.println();
+    }
 
 }

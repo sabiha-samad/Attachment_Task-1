@@ -40,7 +40,24 @@ public class Series {
         count++;
     }
 
+    public void display_series(){
+        System.out.println("==========Series List==========\n");
+        System.out.printf( "%5s|| %15s|| %20s|| %20s|| %10s||" + "", "Index", "Series Name", "Consumption(Hour)", "Consumption(Day)","Rating");
+        System.out.println();
 
+        for(int j=0;j<i;j++) {
+            int k = j+1;
+            System.out.format("%5s %15s %20f %20f %10f", k, series[j],Hour[j],Day[j],Rating[j]);
+            System.out.println();
+        }
+    }
+    public void show_details(int r){
+        int id=r-1;
+        System.out.printf("%20s %15s %15s %18s %18s %10s", "Book Name","Start_Date","End_Date", "Consumption(Hour)", "Consumption(Day)","Rating");
+        System.out.println();
+        System.out.format("%20s %15s %15s %18s %18s %10s", series[id],Start_date[id],End_date[id],Hour[id],Day[id],Rating[id]);
+        System.out.println();
+    }
 
 
 }
