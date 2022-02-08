@@ -6,8 +6,7 @@ public class Main {
     public static void main(String[] args) {
           float total_C_hour;
           float total_C_day;
-          float avg_rating;
-          float total_num;
+        float total_num;
           int choice;
         while (true) {
 
@@ -52,8 +51,103 @@ public class Main {
                         "2.Series\n" +
                         "3.Movies");
                 int type = scan.nextInt();
+                        if(type==0)
+                            break;
+                        if (type == 1) {
+                            bookObj.display_book();
+                            System.out.println("Select the book number you want to edit:");
+                            int id = scan.nextInt();
+                            while (true) {
+                                System.out.println("1.add hours in hour consumption,\n" +
+                                        "2.add days in day consumption,\n" +
+                                        "3.change rating\n" +
+                                        "0.go back,\n");
+                                if (bookObj.End_date[id - 1].isEmpty()) {
+                                    System.out.println("4.add end date");
+                                }
+                                int d = scan.nextInt();
+                                if (d == 1) {
+                                    bookObj.edit_hour(id);
+                                }
+                                if (d == 2) {
+                                    bookObj.edit_day(id);
+                                }
+                                if (d == 3) {
+                                    bookObj.edit_rat(id);
+                                }
+                                if (d == 4) {
+                                    if (bookObj.End_date[id - 1].isEmpty())
+                                        bookObj.edit_end(id);
+                                }
+                                if (d == 0)
+                                    break;
+                            }
+                        }
+                        if (type == 2) {
+                            seriesObj.display_series();
+                            System.out.println("select the series number you want to edit:");
+                            int id = scan.nextInt();
+                            while (true) {
+                                System.out.println("1.add hours in hour consumption,\n" +
+                                        "2.add days in day consumption,\n" +
+                                        "3.change rating\n" +
+                                        "0.go back,\n");
+                                if (seriesObj.End_date[id - 1].isEmpty()) {
+                                    System.out.println("4.add end date");
+                                }
+                                int d = scan.nextInt();
+                                if (d == 1) {
+                                    seriesObj.edit_hour(id);
+                                }
+                                if (d == 2) {
+                                    seriesObj.edit_day(id);
+                                }
+                                if (d == 3) {
+                                    seriesObj.edit_rat(id);
+                                }
+                                if (d == 4) {
+                                    if (seriesObj.End_date[id - 1].isEmpty())
+                                        seriesObj.edit_end(id);
+                                }
+                                if (d == 0)
+                                    break;
+                            }
+                        }
+                        if (type == 3) {
+                            movieObj.display_movie();
+                            System.out.println("select the movie number you want to edit:");
+                            int id = scan.nextInt();
+                            while (true) {
+                                System.out.println("1.add hours in hour consumption,\n" +
+                                        "2.add days in day consumption,\n" +
+                                        "3.change rating,\n" +
+                                        "0.go back,\n");
+                                if (movieObj.End_date[id - 1].isEmpty()) {
+                                    System.out.println("4.add end date");
+                                }
+                                int d = scan.nextInt();
+                                if (d == 1) {
+                                    movieObj.edit_hour(id);
+                                }
+                                if (d == 2) {
+                                    movieObj.edit_day(id);
+                                }
+                                if (d == 3) {
+                                    movieObj.edit_rat(id);
+                                }
+                                if (d == 4) {
+                                    if (movieObj.End_date[id - 1].isEmpty())
+                                        movieObj.edit_end(id);
+                                }
+                                if (d == 0)
+                                    break;
+                            }
 
-            }
+                        }
+                    }
+
+
+
 
 
             if (choice == 3) {
@@ -62,6 +156,44 @@ public class Main {
                         "2.Series\n" +
                         "3.Movies");
                 int type = scan.nextInt();
+
+                if (type==0)
+                    break;
+                if (type == 1) {
+                    while(true) {
+                        bookObj.display_book();
+                        System.out.println("select the book number you want to delete or 0 to go back:");
+                        int id = scan.nextInt();
+                        if(id==0)
+                            break;
+                        else {
+                            bookObj.delete_book(id);
+                            bookObj.display_book();
+                        }
+                    }
+                }
+                if (type == 2) {
+                    seriesObj.display_series();
+                    System.out.println("select the book number you want to delete or 0 to go back:");
+                    int id = scan.nextInt();
+                    if(id==0)
+                        break;
+                    else {
+                        seriesObj.delete_series(id);
+                        seriesObj.display_series();
+                    }
+                }
+                if (type == 3) {
+                    movieObj.display_movie();
+                    System.out.println("select the book number you want to delete or 0 to go back:");
+                    int id = scan.nextInt();
+                    if(id==0)
+                        break;
+                    else {
+                        movieObj.delete_movie(id);
+                        movieObj.display_movie();
+                    }
+                }
 
             }
 
