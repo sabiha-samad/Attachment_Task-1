@@ -254,7 +254,8 @@ public class Main {
                 total_num = bookObj.i + seriesObj.i + movieObj.i;
 
                 System.out.println("Followings are the overall info:");
-                System.out.println("The total consumption time in hours across all types: \n" + total_C_hour);
+
+                System.out.println("The total consumption time in hours across all types:" + total_C_hour);
 
                 System.out.println("Individual consumption time in hours of each type: " );
                 System.out.println("For Books: " + bookObj.total_hour);
@@ -262,10 +263,10 @@ public class Main {
                 System.out.println("For Movies: " + movieObj.total_hour);
 
                 System.out.println("The total days of consumption across all types: " + total_C_day);
-                System.out.println("Individual days of consumption of each type: \n" );
+                System.out.println("Individual days of consumption of each type: " );
                 System.out.println("For Books: " + bookObj.total_day);
-                System.out.println("For Series: " + seriesObj.total_hour);
-                System.out.println("For movies: " + movieObj.total_hour);
+                System.out.println("For Series: " + seriesObj.total_day);
+                System.out.println("For movies: " + movieObj.total_day);
 
 
                 System.out.println("Average rating across all types: " + rating );
